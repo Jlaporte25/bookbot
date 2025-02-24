@@ -10,14 +10,19 @@ def get_num_characters(book_contents):
     characters = {}
 
     for char in lowered_contents:
-        if char not in characters:
-            characters[char] = 1
-        else:
-            characters[char] += 1
+        if char.isalpha():
+            if char not in characters:
+                characters[char] = 1
+            else:
+                characters[char] += 1
 
     return characters
 
 
-def sort_on(dic):
-    new_dict = dict(sorted(dic.items(), key=lambda item: item[::-1]))
-    return new_dict
+def convert_to_list_dict(single_dict):
+    list_of_dicts = [(k, v) for k, v in single_dict.items()]
+    return list_of_dicts
+
+
+def sort_on(dict):
+    return dict[-1]
