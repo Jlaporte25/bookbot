@@ -20,9 +20,9 @@ def get_num_characters(book_contents):
 
 
 def convert_to_list_dict(single_dict):
-    list_of_dicts = [(k, v) for k, v in single_dict.items()]
+    list_of_dicts = [{k: v} for k, v in single_dict.items()]
     return list_of_dicts
 
 
-def sort_on(dict):
-    return dict[-1]
+def sort_on(dic):
+    return next(iter(dic.values()))
